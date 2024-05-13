@@ -1,0 +1,2 @@
+wechatpy>=1.8.14
+urllib3<2.0.0
