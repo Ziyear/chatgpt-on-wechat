@@ -12,10 +12,10 @@ from plugins import *
 
 
 @plugins.register(
-    name="GiteeAi",
-    desc="Arming your ChatGPT bot with various tools",
-    version="0.5",
-    author="goldfishh",
+    name="MyPicAi",
+    desc="自定义ai图片插件",
+    version="0.1",
+    author="ziyear",
     desire_priority=0,
 )
 class MyPicAi(Plugin):
@@ -32,15 +32,15 @@ class MyPicAi(Plugin):
       self.fy_appkey = self.config.get("fy_appkey", 'rIicPz8CTERxTScuxjFE')
       self.fy_url = self.config.get("fy_url",
                                     'http://api.fanyi.baidu.com/api/trans/vip/translate')
-      logger.info("[GiteeAi] inited")
+      logger.info("[MyPicAi] inited")
       self.handlers[Event.ON_HANDLE_CONTEXT] = self.on_handle_context
     except Exception as e:
-      logger.error(f"[GiteeAi]初始化异常：{e}")
-      raise "[GiteeAi] init failed, ignore "
+      logger.error(f"[MyPicAi]初始化异常：{e}")
+      raise "[MyPicAi] init failed, ignore "
 
   def _load_config_template(self):
     logger.debug(
-        "No GiteeAi plugin config.json, use plugins/giteeai/config.json.template")
+        "No MyPicAi plugin config.json, use plugins/MyPicAi/config.json.template")
     try:
       plugin_config_path = os.path.join(self.path, "config.json.template")
       if os.path.exists(plugin_config_path):
